@@ -530,7 +530,153 @@
 //}
 
 
-//用switch语句编程实现以下函数关系:
-//	   -1  (x<0)
-//y =  0   (x=0)
-//	   1   (x>0)
+//实现一个函数，打印乘法口诀表，口诀表的行数和列数自己指定
+//如：输入9，输出9 * 9口诀表，输出12，输出12 * 12的乘法口诀表。
+
+//void multiplytable(int x)
+//{
+//	int i = 0;
+//	int j = 0;
+//	for (i = 1; i <= x; i++)
+//	{
+//		for (j = 1; j <= i; j++)
+//		{
+//			printf("%d*%d=%d\t", j, i, j * i);
+//		}
+//		printf("\n");
+//	}
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	scanf("%d", &n);
+//	multiplytable(n);
+//	return 0;
+//}
+
+
+//递归方式打印一个整数的每一位
+//void print_each(int x)
+//{
+//	if (x > 9)
+//	{
+//		print_each(x / 10);
+//	}
+//	printf("%d ", x % 10);
+//}
+//
+//int main()
+//{
+//	int num = 0;
+//	scanf("%d", &num);
+//	print_each(num);
+//	return 0;
+//}
+
+//编写一个函数 reverse_string(char * string)（递归实现）
+//实现：将参数字符串中的字符反向排列，不是逆序打印。
+//要求：不能使用C函数库中的字符串操作函数。
+//比如:
+//char arr[] = "abcdef";
+//逆序之后数组的内容变成：fedcba
+
+//#include <string.h>
+//
+//void reverses_string(char* string)
+//{
+//	int len = strlen(string);
+//	char* tmp = *string;
+//	*string = *(string + len - 1);
+//
+//	*(string + len - 1) = '\0';
+//	if (strlen(string+1) >= 2)
+//	{
+//		reverses_string(string + 1);
+//	}
+//	*(string + len - 1) = tmp;
+//}
+//
+//int main()
+//{
+//	char arr[] = "abcdef";
+//	reverses_string(arr);
+//	printf("%s", arr);
+//}
+
+
+//递归实现n的k次方
+//int Pow(int n, int k)
+//{
+//	if (k == 0)
+//		return 1;
+//	else
+//		return n * Pow(n,k-1);
+//}
+//
+//int main()
+//{
+//	int k = 3;
+//	int n = 9;
+//	int ret = Pow(n, k);
+//	printf("%d", ret);
+//}
+
+//输出斐波那契数列前20项，每输出5个换行
+//int main()
+//{
+//	int i = 0;
+//	int j = 1;
+//	int k = 0;
+//	int count = 1;
+//	
+//	for (count; count <= 20; count++)
+//	{
+//	
+//		printf("%d ", j);
+//		k = i + j;
+//		i = j;
+//		j = k;
+//		if (count % 5 == 0)
+//			{
+//			printf("\n");
+//			}
+//	}
+//	return 0;
+//}
+//输出用1元人民币换成1分、2分、5分的所有兑换方案。	
+//int main()
+//{
+//	int i, j, k, m = 0;
+//	for(i=0;i<=20;i++)
+//		for (j = 0; j <= 50; j++)
+//		{
+//			k = 100 - 5 * i - 2 * j;
+//			if (k>=0)
+//			{
+//				printf("\n %d %d %d \n", i, j, k);
+//				m = m + 1;
+//				if (m%3==0)
+//				{
+//					printf("\n");
+//				}
+//			}
+//		}
+//	return 0;
+//}
+int fun(int x[], int n)
+{
+	static int sum = 0, i;
+	for (i = 0; i < n; i++)
+	{
+		sum += x[i];
+	}
+	return sum;
+}
+
+int main()
+{
+	int a[] = { 1,2,3,4,5 }, b[] = { 6,7,8,9 }, s = 0;
+	s = fun(a, 5 + fun(b, 4));
+	printf("%d", s);
+ }
