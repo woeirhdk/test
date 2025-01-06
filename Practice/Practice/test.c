@@ -604,6 +604,26 @@
 //	printf("%s", arr);
 //}
 
+//写一个递归函数DigitSum(n)，输入一个非负整数，返回组成它的数字之和
+//例如，调用DigitSum(1729)，则应该返回1 + 7 + 2 + 9，它的和是19
+//输入：1729，输出：19
+//int DigitSum(int n)
+//{
+//	if (n > 9)
+//	{
+//		return DigitSum(n / 10) + n % 10;
+//	}
+//	else
+//	{
+//		return n;
+//	}
+//}
+//
+//int main()
+//{
+//	printf("%d\n",DigitSum(1729));
+//	return 0;
+//}
 
 //递归实现n的k次方
 //int Pow(int n, int k)
@@ -616,10 +636,10 @@
 //
 //int main()
 //{
-//	int k = 3;
-//	int n = 9;
-//	int ret = Pow(n, k);
-//	printf("%d", ret);
+//	int n = 0;
+//	int k = 0;
+//	scanf("%d %d", &n, &k);
+//	printf("%d\n",Pow(n, k));
 //}
 
 //输出斐波那契数列前20项，每输出5个换行
@@ -664,19 +684,88 @@
 //		}
 //	return 0;
 //}
-int fun(int x[], int n)
-{
-	static int sum = 0, i;
-	for (i = 0; i < n; i++)
-	{
-		sum += x[i];
-	}
-	return sum;
-}
 
-int main()
-{
-	int a[] = { 1,2,3,4,5 }, b[] = { 6,7,8,9 }, s = 0;
-	s = fun(a, 5 + fun(b, 4));
-	printf("%d", s);
- }
+//实现一个对整形数组的冒泡排序
+//void BubbleSort(int arr[], int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < sz - i; j++)
+//		{
+//			if (arr[j+1]>arr[i])
+//			{
+//				int tmp = arr[j + 1];
+//				arr[j + 1] = arr[1];
+//				arr[1] = tmp;
+//			}
+//		}
+//	}
+//
+//}
+//int main()
+//{
+//	int arr[10] = { 9,8,7,6,5,4,3,2,1,0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	BubbleSort(arr,sz);
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	return 0;
+//}
+
+
+//创建一个整形数组，完成对数组的操作
+//实现函数init() 初始化数组为全0
+//实现print()  打印数组的每个元素
+//实现reverse()  函数完成数组元素的逆置。
+//要求：自己设计以上函数的参数，返回值。
+
+//void init(int arr[],int sz,int set)
+//{
+//	for (int i = 0; i < sz; i++)
+//	{
+//		arr[i] = set;
+//	}
+//}
+//
+//void print(int arr[],int sz)
+//{
+//	for (int i = 0; i < sz; i++)
+//	{
+//		printf("%d ", arr[i]);
+//	}
+//	printf("\n");
+//}
+//
+//void revers(int arr[],int sz)
+//{
+//	int left = 0;
+//	int right = sz - 1;
+//	while (left < right)
+//	{
+//		int tmp = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = tmp;
+//		left++;
+//		right--;
+//	}
+//}
+//
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	init(arr,sz, 0);
+//	print(arr, sz);
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		arr[i] = i;
+//	}
+//	print(arr, sz);
+//	revers(arr, sz);
+//	print(arr, sz);
+//}

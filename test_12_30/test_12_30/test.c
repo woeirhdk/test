@@ -135,7 +135,7 @@
 //数组传参的时候，形参有2种写法
 //1.数组 int arr[]
 //2.指针 int* arr
-void bubble_sort(int *arr,int sz)
+void bubble_sort(int arr[], int sz)//地址用指针接受，这里arr看起来是数组，本质是指针变量
 {
 	//	趟数
 	int i = 0;
